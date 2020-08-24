@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 import OktaSignInWidget from './OktaSignInWidget';
 
-function Login() {
+export default () => {
   const { authState, authService } = useOktaAuth();
 
   const onSuccess = function(res) {
@@ -18,15 +18,10 @@ function Login() {
     console.log('error logging in', err);
   }
 
-  if (authState.isPending) return null;
-
-  if (authState.isPending) return null;
   return authState.isAuthenticated ?
     <Redirect to={{ pathname: '/' }}/> :
     <OktaSignInWidget
-      baseUrl='https://https://dev-322018.oktapreview.com'
+      baseUrl='https://dev-322018.oktapreview.com'
       onSuccess={onSuccess}
       onError={onError}/>;
 }
-
-export default Login;

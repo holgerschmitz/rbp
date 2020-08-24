@@ -4,10 +4,10 @@ import Home from './Home';
 import Login from './Login';
 import Private from './Private';
 import { useHistory } from "react-router";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { LoginCallback, SecureRoute, Security } from '@okta/okta-react';
 
-function SecuredApp() {
+export default () => {
   const history = useHistory();
 
   const onAuthRequired = function() {
@@ -22,11 +22,9 @@ function SecuredApp() {
               onAuthRequired={onAuthRequired} >
       <Header />
       <Route path='/' exact={true} component={Home}/>
-      <Route path='/login' component={Login}/>
+      <Route path='/login' exact={true} component={Login}/>
       <SecureRoute path='/private' component={Private}/>
       <Route path='/callback' component={LoginCallback}/>
     </Security>
   );
 }
-
-export default SecuredApp;

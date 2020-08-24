@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Home() {
+export default () => {
   return (
     <div className="page">
       <h1>Login with React</h1>
@@ -13,5 +13,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

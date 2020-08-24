@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 
-function Header() {
+export default () => {
   const { authState, authService } = useOktaAuth();
 
   const login = () => { authService.login('/'); }
@@ -19,5 +19,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

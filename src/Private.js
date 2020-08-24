@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Private() {
+export default () => {
   return (
     <div className="page">
       <h1>Private</h1>
@@ -8,5 +8,3 @@ function Private() {
     </div>
   );
 }
-
-export default Private;
