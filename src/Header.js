@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useOktaAuth } from '@okta/okta-react';
+
+import { authService } from './auth';
 
 export default () => {
-  const { authState, authService } = useOktaAuth();
+  const authenticated = authService.useAuthenticated();
 
   const login = () => { authService.login('/'); }
   const logout = () => { authService.logout('/'); }
 
-  const userText = authState.isAuthenticated
+  const userText = authenticated
     ? <button onClick={ logout }>Logout</button>
     : <button onClick={ login }>Sign In</button>;
   return (

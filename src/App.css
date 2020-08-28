@@ -38,3 +38,21 @@ button {
 button:hover {
   background-color: #3700b3;
 }
+
+.login-form {
+  display: inline-block;
+  width: 20em;
+}
+
+.full-width-input {
+  display: block;
+  text-align: right;
+}
+
+.full-width-input input {
+  width: 12em;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border: 1px solid #aaaaaa;
+  border-radius: 0;
+}
